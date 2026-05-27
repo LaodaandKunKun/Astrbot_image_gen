@@ -109,4 +109,13 @@ MIT
 
 本插件由AI生成。三视图可以用动漫中的照片、角色立绘等让chatgpt生成。
 发送含真人的照片给bot时，请考虑信息泄露等可能导致问题的因素。
-多人格不同三视图正在开发
+多人格不同三视图正在开发。
+正在尝试用房间例图来固定bot住所内的场景
+
+## 示例图片
+<img width="1536" height="1024" alt="ChatGPT Image May 26, 2026, 08_35_07 PM" src="https://github.com/user-attachments/assets/c3b4ff72-f35b-4915-b0e4-e7774ea4e1fc" />
+chatgpt生成的三视图
+<img width="1536" height="1024" alt="11" src="https://github.com/user-attachments/assets/d74cc282-b0b9-4e38-8261-370a004e9bd4" />
+bot返回的图片 （已经过bot同意后发布）
+<img width="1024" height="1536" alt="1" src="https://github.com/user-attachments/assets/16e8e517-0205-474a-a3f8-80d38e24d19f" />
+bot返回的竖屏自拍
