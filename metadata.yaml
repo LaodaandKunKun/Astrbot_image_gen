@@ -1,0 +1,5 @@
+name: astrbot_plugin_char_mixer
+desc: 二次元角色虚实混合图片生成（LLM Tool Call 触发）
+version: 1.0.0
+author: CrazyCockatoo
+repo: https://github.com/CrazyCockatoo/astrbot_plugin_char_mixer

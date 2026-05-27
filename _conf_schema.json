@@ -1,0 +1,27 @@
+{
+  "openai_api_key": {
+    "description": "OpenAI API Key（用于 gpt-image-2 生图）",
+    "type": "string",
+    "default": ""
+  },
+  "openai_base_url": {
+    "description": "OpenAI API Base URL（留空使用官方 https://api.openai.com/v1）",
+    "type": "string",
+    "default": ""
+  },
+  "image_model": {
+    "description": "图片生成模型",
+    "type": "string",
+    "default": "gpt-image-2"
+  },
+  "image_quality": {
+    "description": "图片质量 (low / medium / high)",
+    "type": "string",
+    "default": "high"
+  },
+  "char_reference_path": {
+    "description": "角色三视图文件路径（PNG/JPG，本地绝对路径）",
+    "type": "string",
+    "default": "/opt/astrbot/data/char_reference.png"
+  }
+}
