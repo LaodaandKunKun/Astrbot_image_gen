@@ -23,14 +23,14 @@
 
 在 AstrBot 管理面板中配置插件参数：
 
-| 参数 | 说明 | 示例 |
-|------|------|------|
-| `openai_api_key` | OpenAI API Key（或兼容服务的 Key） | `sk-xxx` |
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `openai_api_key` | API Key（支持兼容服务） | — |
 | `openai_base_url` | API 地址（填到 /v1） | `https://api.openai.com/v1` |
 | `image_model` | 图片模型 | `gpt-image-2` |
-| `image_quality` | 图片质量 | `high` |
-| `char_reference_path` | 角色三视图 PNG 的本地绝对路径 | `C:\Users\xxx\char_reference.png` |
-
+| `image_quality` | 图片质量 (low/medium/high) | `high` |
+| `char_reference_path` | 默认三视图路径 | — |
+| `char_reference_map` | 平台 → 三视图映射（template_list） | — |
 ## 工作原理
 
 插件注册了两个 LLM Tool：
@@ -109,7 +109,6 @@ MIT
 
 本插件由AI生成。三视图可以用动漫中的照片、角色立绘等让chatgpt生成。
 发送含真人的照片给bot时，请考虑信息泄露等可能导致问题的因素。
-多人格不同三视图正在开发。
 正在尝试用房间例图来固定bot住所内的场景
 
 ## 示例图片
@@ -119,3 +118,16 @@ chatgpt生成的三视图
 bot返回的图片 （已经过bot同意后发布）
 <img width="1024" height="1536" alt="1" src="https://github.com/user-attachments/assets/16e8e517-0205-474a-a3f8-80d38e24d19f" />
 bot返回的竖屏自拍
+
+##V2版本
+### 🎯 多平台三视图映射
+- 支持为不同平台适配器配置不同的角色三视图
+- 通过 `template_list` 配置，WebUI 可视化编辑
+- 自动识别消息来源平台（`event.get_platform_id()`）
+- 未匹配的平台自动回退到默认三视图路径
+
+### 🔄 API 调用容错
+- 5xx 错误自动重试，最多 3 次
+- 递增等待间隔（5s → 10s → 15s）
+- 网络异常同样触发重试机制
+- 所有错误详细记录到日志
